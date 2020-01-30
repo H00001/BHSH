@@ -644,7 +644,7 @@ updown2=>condition: 是否有按钮
 nc=>operation: 比较设置温度值与当前温度值大小
 bj=>operation: 报警电路
 bd=>operation: 按钮处理
-cc=>operation: 温度控制 ----------------------------------------------------------------                       
+cc=>operation: 温度控制                   
 st->e->io1->io2->updown
 bd->nc->cc->io1
 bj->io1
