@@ -6,8 +6,8 @@
 
 **关键词：AT89C51，单片机 ，DS18B20温度芯片，温度控制**  
 
-----
 
+<div STYLE="page-break-after: always;"></div>
 # Abstract
 
 This design uses STC89C52RC single-chip microcomputer as the core of the working principle and design method of temperature control system. The temperature signal is collected by the temperature chip DS18B20 and transmitted to the single-chip microcomputer as a digital signal. This article introduces the hardware part of the control system, including: temperature detection circuit, temperature control circuit, display circuit. The single chip microcomputer processes the signals accordingly to achieve the purpose of temperature control.The single chip microcomputer processes the signals accordingly to achieve the purpose of temperature control. The paper also focuses on the software design part, which adopts a modular structure. The main modules are: digital tube display program, keyboard scanning and key processing program, temperature signal processing program, relay control program, and over-temperature alarm process. The control system can store relevant temperature data in real time and record the current time. The system program mainly includes a main program, a readout temperature subprogram, a calculation temperature subprogram, a key processing program, an LCD display program, and a data storage program.
@@ -47,7 +47,7 @@ This design uses STC89C52RC single-chip microcomputer as the core of the working
 
 
 
-
+<div STYLE="page-break-after: always;"></div>
 # 第2章 系统总体方案设计
 
 ## 2.1 系统工作原理
@@ -409,7 +409,7 @@ h. 中断结束/出错方式设置
 
 
 
-
+<div STYLE="page-break-after: always;"></div>
 # 第3章 系统硬件电路设计
 
 ## 3.1 AT89C51单片机简介
@@ -530,9 +530,9 @@ PWM就是脉冲宽度调制的英文缩写，方波高电平时间跟周期的�
 
 ### 脉宽调制信号的作用
 
-          可控脉冲
-
+可控脉冲
 脉宽调制信号由P3.0口输出将P3.0口输出的矩形波信号接于双向可控硅的控制端来控制可控硅的通断。当矩形波在一个周期内高电平的时间越长，双向可控硅的导通时间越长，即发热元件上发出的热量也越多。总之，发热元件上释放出能量的高低由矩形波在一个周期内高电平的时间长短所决定的。
+
 ### 脉冲宽度调制优点
 　　PWM的一个优点是从处理器到被控系统信号都是数字形式的，无需进行数模转换。让信号保持为数字形式可将噪声影响降到最小。噪声只有在强到足以将逻辑1改变为逻辑0或将逻辑0改变为逻辑1时，也才能对数字信号产生影响。 
 　　对噪声抵抗能力的增强是PWM相对于模拟控制的另外一个优点，而且这也是在某些时候将PWM用于通信的主要原因。从模拟信号转向PWM可以极大地延长通信距离。在接收端，通过适当的RC或LC网络可以滤除调制高频方波并将信号还原为模拟形式。 
@@ -551,7 +551,7 @@ PWM就是脉冲宽度调制的英文缩写，方波高电平时间跟周期的�
 
 
 
-
+<div STYLE="page-break-after: always;"></div>
 # 第4章 系统软件设计
 
 在微机测控系统中，软件与硬件同样重要。硬件是系统的躯体，软件则是灵魂，当系统的硬件电路设计好之后，系统的主要功能还是要靠软件来实现，而且软件的设计在很大程度上决定了测控系统的性能。为了满足系统的要求，编制软件时一般要符合以下基本要求：  
@@ -655,6 +655,8 @@ updown2(no)->nc
 
 
 
+
+<div STYLE="page-break-after: always;"></div>
 # 第5章 系统软件调试
 
 ## 5.1 目测
