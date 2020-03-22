@@ -10,7 +10,7 @@
 
 # Abstract
 
-This design uses STC89C52RC single-chip microcomputer as the core of the working principle and design method of temperature control system. The temperature signal is collected by the temperature chip DS18B20 and transmitted to the single-chip microcomputer as a digital signal. This article introduces the hardware part of the control system, including: temperature detection circuit, temperature control circuit, display circuit. The single chip microcomputer processes the signals accordingly to achieve the purpose of temperature control.The single chip microcomputer processes the signals accordingly to achieve the purpose of temperature control. The paper also focouses on the software design part, which adopts a modular structure. The main modules are: digital tube display prog随机存取存储器, keyboard scanning and key processing prog随机存取存储器, temperature signal processing prog随机存取存储器, relay control prog随机存取存储器, and over-temperature alarm process. The control system can store relevant temperature data in real time and record the current time. The system prog随机存取存储器 mainly includes a main prog随机存取存储器, a readout temperature subprog随机存取存储器, a calculation temperature subprog随机存取存储器, a key processing prog随机存取存储器, an LCD display prog随机存取存储器, and a data storage prog随机存取存储器.
+This design uses STC89C52RC single-chip microcomputer as the core of the working principle and design method of temperature control system. The temperature signal is collected by the temperature chip DS18B20 and transmitted to the single-chip microcomputer as a digital signal. This article introduces the hardware part of the control system, including: temperature detection circuit, temperature control circuit, display circuit. The single chip microcomputer processes the signals accordingly to achieve the purpose of temperature control. The single chip microcomputer processes the signals accordingly to achieve the purpose of temperature control. The paper also focouses on the software design part, which adopts a modular structure. The main modules are: digital tube display prog random access memory, keyboard scanning and key processing prog random access memory, temperature signal processing prog random access Memory, relay control prog, random access memory, and over-temperature alarm pr ocess. The control system can store relevant temperature data in real time and record the current time. The system prog random access memory mainly includes a main prog random access memory, a readout temperature subprog random access memory, a calculation temperature subprog random Access memory, a key processing prog random access memory, an LCD display prog random access memory, and a data storage prog random access memory.
 
 
 
@@ -517,6 +517,7 @@ PWM就是脉冲宽度调制的英文缩写，方波高电平时间跟周期的�
 　　
 
 ### 3.3.3 脉宽调制信号的设计思想
+
 本课题的脉宽调制信号是设定周期为1s矩形波。它的产生将定时计数器设定在10ms定时，后通过寄存器R3来控制脉宽调制信号的周期，本课题只是达到一种模拟的效果，在精确上没有过高的要求，因此将1s周期分成100等份，即设定定时器的定时为10ms，R3中启动定时器的次数100。
 
 寄存器R2中存放的数据是根据检测电路和控制电路转换过来的一个数，R2中存放的数值的大小用于控制脉冲信号，在1s内高电平的时间长短。这样可以从P2.6口检测到定周期脉冲可调的控制信号。
@@ -528,6 +529,7 @@ PWM就是脉冲宽度调制的英文缩写，方波高电平时间跟周期的�
 脉宽调制信号由P3.0口输出将P3.0口输出的矩形波信号接于双向可控硅的控制端来控制可控硅的通断。当矩形波在一个周期内高电平的时间越长，双向可控硅的导通时间越长，即发热元件上发出的热量也越多。总之，发热元件上释放出能量的高低由矩形波在一个周期内高电平的时间长短所决定的。
 
 ### 3.3.5 脉冲宽度调制优点
+
 PWM的一个优点是从处理器到被控系统信号都是数字形式的，无需进行数模转换。让信号保持为数字形式可将噪声影响降到最小。噪声只有在强到足以将逻辑1改变为逻辑0或将逻辑0改变为逻辑1时，也才能对数字信号产生影响。
 
 对噪声抵抗能力的增强是PWM相对于模拟控制的另外一个优点，而且这也是在某些时候将PWM用于通信的主要原因。从模拟信号转向PWM可以极大地延长通信距离。在接收端，通过适当的RC或LC网络可以滤除调制高频方波并将信号还原为模拟形式。
