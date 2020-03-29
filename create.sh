@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "create at:$(date)" > page.md
 cat head.md >> page.md
 cat body-0.md >> page.md
 cat body-1.md >> page.md
