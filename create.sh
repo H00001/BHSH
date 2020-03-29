@@ -1,9 +1,9 @@
 #!/bin/bash
-echo "create at:$(date)" > $1/page.md
-cat $2/head.md >> $1/page.md
-cat $2/body-0.md >> $1/page.md
-cat $2/body-1.md >> $1/page.md
-cat $2/body-2.md >> $1/page.md
-cat $2/body-3.md >> $1/page.md
-cat $2/tail.md >> $1/page.md
+echo "create at:$(date)" > page.md
+cat head.md >> page.md
+cat body-0.md >> page.md
+cat body-1.md >> page.md
+cat body-2.md >> page.md
+cat body-3.md >> page.md
+cat tail.md >> page.md
 
