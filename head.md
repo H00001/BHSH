@@ -1,34 +1,29 @@
 # 摘 要
+// 我干了啥，我咋干的，越简单越好
+本设计基于STC89C52RC单片机的温度控制系统的工作原理和设计方法。本文介绍了控制系统的硬件部分，包括：温度检测电路，温度控制电路，显示电路。单片机处理信号线单片机对信号进行相应处理，以达到温度控制的目的。该文档还重点介绍了采用模块化结构的软件设计部分。介绍了该控制系统的硬件部分会在文中写出，包括的模块是：数字管显示程序，键盘扫描和按键处理程序，温度信号处理程序，继电器控制程序和过热报警程序。同时，还包括系统中复杂的电路设计等方式。主程序，
+// 不通顺
+读取温度子程序，键处理程序，LCD显示程序和数据存储程序。该控制系统可以实时存储相关的温度数据并记录当前的时间。系统程序主要包括主程序，读出温度子程序，处理轮转子程序，转换温度计算子程序、按键处理结构、LCD显示程序以及数据存储程序等。
 
-本设计基于基于STC89C52RC单片机的温度控制系统的工作原理和设计方法。本文介绍了控制系统的硬件部分，包括：温度检测电路，温度控制电路，显示电路。单片机处理信号线单片机对信号进行相应处理，以达到温度控制的目的。该文档还重点介绍了采用模块化结构的软件设计部分。介绍了该控制系统的硬件部分会在文中写出，包括的模块是：数字管显示程序，键盘扫描和按键处理程序，温度信号处理程序，继电器控制程序和过热报警程序。同时，还包括系统中复杂的电路设计等方式。主程序，读取温度子程序，键处理程序，LCD显示程序和数据存储程序。该控制系统可以实时存储相关的温度数据并记录当前的时间。系统程序主要包括主程序，读出温度子程序，处理轮转子程序，转换温度计算子程序、按键处理结构、LCD显示程序以及数据存储程序等。
 
-
-
-**关键词：AT89C51，单片机 ，DS18B20温度芯片，温度控制**  
+**关键词：AT89C51 ，DS18B20温度芯片，温度控制**  
 
 
 
 # Abstract
 
-This design uses STC89C52RC single-chip microcomputer as the core of the working principle and design method of temperature control system. The temperature signal is collected by the temperature chip DS18B20 and transmitted to the single-chip microcomputer as a digital signal. This article introduces the hardware part of the control system, including: temperature detection circuit, temperature control circuit, display circuit. The single chip microcomputer processes the signals accordingly to achieve the purpose of temperature control. The single chip microcomputer processes the signals accordingly to achieve the purpose of temperature control. The paper also focouses on the software design part, which adopts a modular structure. The main modules are: digital tube display prog random access memory, keyboard scanning and key processing prog random access memory, temperature signal processing prog random access Memory, relay control prog, random access memory, and over-temperature alarm pr ocess. The control system can store relevant temperature data in real time and record the current time. The system prog random access memory mainly includes a main prog random access memory, a readout temperature subprog random access memory, a calculation temperature subprog random Access memory, a key processing prog random access memory, an LCD display prog random access memory, and a data storage prog random access memory.
-
-
-
+This design uses STC89C52 single-chip microcomputer as the core of the working principle and design method of temperature control system. The temperature signal is collected by the temperature chip DS18B20 and transmitted to the single-chip microcomputer as a digital signal. This article introduces the hardware part of the control system, including: temperature detection circuit, temperature control circuit, display circuit. The single chip microcomputer processes the signals accordingly to achieve the purpose of temperature control. The single chip microcomputer processes the signals accordingly to achieve the purpose of temperature control. The paper also focouses on the software design part, which adopts a modular structure. The main modules are: digital tube display prog random access memory, keyboard scanning and key processing prog random access memory, temperature signal processing prog random access Memory, relay control prog, random access memory, and over-temperature alarm pr ocess. The control system can store relevant temperature data in real time and record the current time. The system prog random access memory mainly includes a main prog random access memory, a readout temperature subprog random access memory, a calculation temperature subprog random Access memory, a key processing prog random access memory, an LCD display prog random access memory, and a data storage prog random access memory.
 ----
 
-
-
-
 # 第1章 绪 论
-
 ## 1.1 温度控制系统研究的目的和重要性
-
 在人类历史上，环境温度起着极其重要的作用。环境温度是工业生产中最常见的工艺参数之一。每个物理变化和每个化学反应过程都与温度密切相关。因此，温度控制是生产自动化中的重要任务。随着社会的发展，科学技术的进步以及温度测量设备在各个领域的使用，智能化是现代温度控制系统发展的主要组成部分。尤其是近年来，温度控制系统已经应用于人们生活的各个方面，但是温度控制一直是一个尚未发展的领域，但这是一个与人类息息相关的世纪之久的问题。在这种实际情况下，温度控制系统的设计具有广阔的应用前景和重要性。
 
+// 电炉，对象描述不清
 此结构是为室温控制系统设计的，控制对象是室温。温度控制通常用于日常生活和工业领域，例如用于冷室，洗澡池，酵母池，电源和其他地方的温度控制。过去，温度控制是手动进行的，没有给予足够的重视。实际上，在许多地方都必须很好地调节温度。鉴于此问题，此系统设计的目的是创建一个可使其自身适应设定温度的系统。它被广泛使用，功能强大，小巧美观，易于携带。这是一种实用且廉价的控制系统。
 
 ## 1.2 温度控制系统研究概况
 
+// 要一直说到现在
 国外对温度控制技术的研究始于1970年代。首先，使用模拟组合仪器来收集现场信息并执行指令，记录和控制。分布式控制系统出现在1980年代后期。目前正在开发用于计算机数据采集的控制系统的集成多因素控制系统。当前，温度测量和控制技术在全球不同国家中迅速发展，并且一些国家正在朝着完全自动化和无人值守的方向发展。
 
 中国对温度测量和控制技术的研究相对较晚，始于1980年代。中国工程师和技术人员已经吸收了工业化国家对温度测量和控制技术的吸收，从而掌握了室内温度的微机控制技术。该技术仅限于控制环境中的单个温度因子。中国温度测控设备的计算机应用一般处于从消化吸收阶段，易应用阶段到实用化，全面应用阶段的过渡和发展。从技术上讲，大多数情况下都存在由单片机控制的单参数单回路系统，并且没有真正的集成多参数控制系统。与工业化国家相比，差距很大。我国温度测控的现状还远远没有达到工业化水平。生产中仍有很多困扰我们的问题。设备支持能力差，工业化程度低，环境控制落后，软件和硬件资源无法共享和可靠。缺点，例如不良性行为。
@@ -45,5 +40,4 @@ This design uses STC89C52RC single-chip microcomputer as the core of the working
 3. 光纤传感器。光纤测温技术可分为两类:全辐射测温法，单辐射测温法，双波长测温法，多波长测温法等。特点是：光纤挠性好、透光谱段宽、传输损耗低，无论是就地使用或远传均十分方便而且光纤直径小，可以单根、成束、Y型或阵列方式使用，结构布置简单且体积小。缺点是：测量起来困难,难于实现较高的精度，工艺比较复杂,且造价高，推广应用有一定困难。
 4. 半导体吸收式光纤温度传感器。半导体吸收式光纤温度传感器是利用了半导体材料的吸收光谱随温度变化的特性实现的。一种传光型光纤温度传感器，是指在光纤传感系统中，光纤仅作为光波的传输通路，而利用其它如光学式或机械式的敏感元件来感受被测温度的变化。在这类传感器中，半导体吸收式光纤温度传感器是研究得比较深入的一种。
 5. 智能温度传感器。智能温度传感器(亦称数字温度传感器）是在20世纪90年代中期问世的。它是微电子技术、计算机技术和自动测试技术（ATE）的结晶。目前，国际上已开发出多种智能温度传感器系列产品。智能温度传感器内部包含温度传感器、A/D传感器、信号处理器、存储器（或寄存器）和接口电路。有的产品还带多路选择器、中央控制器（中央处理单元）、随机存取存储器（随机存取存储器）和只读存储器（只读存储器）。智能温度传感器能输出温度数据及相关的温度控制量，适配各种微控制器（M中央处理单元），并且可通过软件来实现测试功能，即智能化取决于软件的开发水平。
-
-随着科学技术的不断进步与发展，温度传感器的种类日益繁多，数字温度传感器更因适用于各种微处理器接口组成的自动温度控制系统具有可以克服模拟传感器与微处理器接口时需要信号调理电路和A/D转换器的弊端等优点，被广泛应用于工业控制、电子测温计、医疗仪器等各种温度控制系统中。其中，比较有代表性的数字温度传感器有DS18B20、MAX6575、DS1722、MAX6635等。相比较而言，传统的温度检测以热敏电阻为温度敏感元件，热敏电阻成本低，但需要后续信号处理电路，而且热敏电阻的可靠性相对较差，测量温度的准确度低，检测系统的精度差。数字式温度传感器的种类也不少，并且在实际工程设计中具有上述诸多优点。
+6. 数字温度传感器 // todo 补充
