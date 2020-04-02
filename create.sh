@@ -13,5 +13,6 @@ fi
 cat head.md >> ${paper_file}
 cat ${tmp_file} >> ${paper_file}
 cat tail.md >> ${paper_file}
+cat follow.md >> ${paper_file}
 rm ${tmp_file}
 echo -e "create [SUCCEED]"
