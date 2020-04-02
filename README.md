@@ -16,3 +16,6 @@ Location: Parse
 ## Copy to docx
 1. start template.dotx 
 2. writeage `parse md`
+
+## Preview
+http://page.gunplan.top/paper/preview/paper.html
