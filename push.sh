@@ -1,4 +1,5 @@
 #!/bin/bash
+./create.sh
 source ./cd-help.sh
 show_process 10 "31" 0.1 &
 git add . 1>/dev/null 2>&1
