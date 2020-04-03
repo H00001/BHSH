@@ -5,13 +5,6 @@ str=">"
 
 arr=("|" "/" "-" "\\")
 function show_process() {
-	while [[ ${i} -le $5 ]]
-    	do
-    	str='='${str}
- 	let i++
-    	done
-   	 printf "\e[0;$2;1m[%-100s][%d%%]%c\e[0m %s\r" "$str" "$5" "${arr[${index}]}" "$4"
-    i=$5
     while [[ ${i} -le $1 ]]
     do
     let index=i%4
