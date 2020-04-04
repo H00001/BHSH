@@ -38,6 +38,7 @@ echo "> create at:$(date) sha256:$(${sha} ${tmp_file})" > ${paper_file}
 
 show_process 90 "32" 0.02 "check file sha1" 60
 cat head.md >> ${paper_file}
+echo -e "\n[TOC]\n" >> ${paper_file}
 cat ${tmp_file} >> ${paper_file}
 cat tail.md >> ${paper_file}
 cat follow.md >> ${paper_file}
