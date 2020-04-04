@@ -63,17 +63,17 @@
 
 在硬件测试没有问题后将程序通过烧录器将程序下载到单片机中，程序下载软件采用prognisp软件下载下载方式如图4-3所示：
 
-![图4-3 程序烧录界面](http://my.gunplan.top/static/mfd/b002.png)
+![图4-3 程序烧录界面](http://my.gunplan.top/static/mfd/c01.png)
 
 将单片机程序下载后，由于初始设定值为0，所以温湿度会报警，而且显示当前的温湿度值如图4-4所示。
 
-![图4-3 程序下载后界面显示](http://my.gunplan.top/static/mfd/403.png)
+![图4-3 程序下载后界面显示](http://my.gunplan.top/static/mfd/404.png)
 
 
 
 按照功能设计通过设置可以将温湿度的最大值和最小值进行设定如图4-4所示：
 
-![图4-4 最大值设置界面](http://my.gunplan.top/static/mfd/404.png)
+![图4-4 最大值设置界面](http://my.gunplan.top/static/mfd/c01.png)
 
 
 在设定后可以通过长按设定键将系统转换为自动方式并且设定其自动控制的温湿度的值，具体步骤过如图4-5所示
